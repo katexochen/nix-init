@@ -58,7 +58,7 @@ pub(super) fn load_rust_dependency(inputs: &mut AllInputs, resolve: &Resolve, pk
         "gstreamer-video-sys" => gst!("gst-plugins-base"),
         "gstreamer-webrtc-sys" => gst!("gst-plugins-bad"),
         "gtk-sys" => {
-            native_build!("wrapGAppsHook");
+            native_build!("wrapGAppsHook3");
             build!("gtk3");
         }
         "gtk4-layer-shell-sys" => build!("gtk4-layer-shell"),
