@@ -22,7 +22,7 @@ pub(super) fn load_go_dependency(inputs: &mut AllInputs, pkg: GoPackage<'_>) {
         }
         "github.com/google/gopacket" => build!("libpcap"),
         "github.com/gotk3/gotk3" => {
-            native_build!("pkg-config", "wrapGAppsHook");
+            native_build!("pkg-config", "wrapGAppsHook3");
             build!("gtk3");
         }
         "github.com/shirou/gopsutil" => {
