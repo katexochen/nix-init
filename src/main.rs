@@ -1223,11 +1223,18 @@ async fn run() -> Result<()> {
         .run()
         .await?;
 
+    let msg = formatdoc! {r#"
+      {attr}: init at {version}
+
+      {url}
+
+      Assisted-by: nix-init"#,
+    };
     Command::new("git")
         .arg("commit")
         .arg(out_dir)
         .arg("-om")
-        .arg(format!("{attr}: init at {version}\n\n{url}"))
+        .arg(msg)
         .run()
         .await?;
 
