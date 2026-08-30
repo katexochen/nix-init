@@ -28,4 +28,9 @@ jobs:
           name: nix-community
 
       - name: Cargo test
-        run: nix develop -c cargo test e2e
+        run: |
+          mkdir -p ~/.config/nix-init
+          echo "access-tokens.'github.com' = '$GITHUB_TOKEN'" > ~/.config/nix-init/config.toml
+          nix develop -c cargo test e2e
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
