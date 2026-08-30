@@ -153,7 +153,7 @@ pub async fn write_cargo_lock(
                 url.set_fragment(None);
 
                 let hash = Command::new(NURL)
-                    .arg(url.to_string())
+                    .arg(url.as_str())
                     .arg(rev)
                     .arg("-Hf")
                     .arg("fetchgit")
