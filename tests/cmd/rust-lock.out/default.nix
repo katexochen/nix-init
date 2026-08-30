@@ -43,7 +43,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   passthru.updateScript = nix-update-script { };
 
   meta = {
-    description = "A markup-based typesetting system that is powerful and easy to learn";
+    description = "[..]";
     homepage = "https://github.com/typst/typst";
     changelog = "https://github.com/typst/typst/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.tost;

@@ -92,6 +92,7 @@ heck = "0.5.0"
 insta = "1.48.0"
 tempfile = "3.27.0"
 trycmd = "1.2.0"
+which = "8.0.5"
 
 [features]
 default = ["vendored"]
