@@ -5,6 +5,7 @@ use std::{
 
 use tempfile::TempDir;
 use trycmd::TestCases;
+use which::which;
 
 #[test]
 fn e2e() {
@@ -20,6 +21,8 @@ fn e2e() {
 
     TestCases::new()
         .default_bin_name("nix-init")
+        .register_bin("mv", which("mv"))
         .env("XDG_CONFIG_DIRS", tmp.to_str().unwrap())
+        .case("tests/cmd/**/*.md")
         .case("tests/cmd/**/*.toml");
 }
