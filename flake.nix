@@ -61,7 +61,7 @@
               '';
             };
             full = pkgs.mkShell {
-              imports = [ config.devShells.default ];
+              inputsFrom = [ config.devShells.default ];
               packages = [
                 inputs'.fenix.packages.stable.defaultToolchain
               ];
